@@ -4,12 +4,6 @@ import argparse
 
 from libnmap.parser import NmapParser
 
-def usage(script_name):
-    print "Nmap XML Script Results Parser"
-    print "by: maik"
-    print
-    print "Usage: %s [--brief | -b] report_file.xml"
-    
 def main():
     argp = argparse.ArgumentParser(description='''
 Nmap XML Script Results Parser

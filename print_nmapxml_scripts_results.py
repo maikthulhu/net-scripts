@@ -28,18 +28,19 @@ by: maik''',
                 print "  {}".format(results['id'])
 
             for element in results['elements']:
-                if not args.brief:
+                if type(results['elements'][element]) is dict:
                     print "    {}".format(element)
-                for k,v in results['elements'][element].iteritems():
-                    if args.brief:
-                        if k == 'state':
-                            print "    {} : {}".format(k, v.rstrip())
-                            break
-                        else:
-                            continue
-                    print "    {} : {}".format(k, v.rstrip())
-                
-                print
+                    for k,v in results['elements'][element].iteritems():
+                        if args.brief:
+                            if k == 'state':
+                                print "    {} : {}".format(k, v.rstrip())
+                                break
+                            else:
+                                continue
+                        print "    {} : {}".format(k, v.rstrip())
+                    print
+                else:
+                    print "    {} : {}".format(element,results['elements'][element])
                 
 if __name__ == '__main__':
     main()

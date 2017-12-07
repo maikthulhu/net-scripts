@@ -27,8 +27,6 @@ by: maik''',
             else:
                 print "  {}".format(results['id'])
 
-
-
             for element in results['elements']:
                 if not args.brief:
                     print "    {}".format(element)
